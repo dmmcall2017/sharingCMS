@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class Rich extends Component {
+class High extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -9,10 +9,10 @@ class Rich extends Component {
     render() {
         return (
             <div className="">
-                Rich
+                High
             </div>
         );
     }
 }
 
-export default Rich;
+export default High;

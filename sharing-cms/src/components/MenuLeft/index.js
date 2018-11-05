@@ -17,12 +17,12 @@ class NavLeft extends React.Component {
             menuTreeNode:'',
             openKeys: ['/home'],
             hideLogoText: false,
-            current:['']
+            current:[''],
+            oldOpenKeys:''
         };
     }
 
     onOpenChange = (openKeys) => {
-        console.log("click",new Date());
         const latestOpenKey = openKeys.find(key => this.state.openKeys.indexOf(key) === -1);
         if(rootSubmenuKeys.indexOf(latestOpenKey) === -1){
             this.setState({
@@ -44,8 +44,18 @@ class NavLeft extends React.Component {
 
     hideText = (collapsed)=>{
         this.setState({
-            hideLogoText: collapsed
-        })
+            hideLogoText: collapsed,
+            oldOpenKeys: this.state.openKeys
+        });
+        if(collapsed){
+            this.setState({
+                openKeys:[]//判断不展开是一级菜单收起
+            })
+        }else{
+            this.setState({
+                openKeys: this.state.oldOpenKeys
+            })
+        }
     };
 
     componentDidMount(){
@@ -79,7 +89,7 @@ class NavLeft extends React.Component {
 
     testSelect =(path)=>{
         global.constants.history.push(path.key);
-    }
+    };
     
     render() {
         return (
@@ -91,7 +101,7 @@ class NavLeft extends React.Component {
                 <Menu
                     mode="inline"
                     className="menuList"
-                    defaultOpenKeys={this.state.openKeys}
+                    openKeys={this.state.openKeys}
                     theme="dark"
                     onOpenChange = {this.onOpenChange}
                     defaultSelectedKeys={this.state.current}

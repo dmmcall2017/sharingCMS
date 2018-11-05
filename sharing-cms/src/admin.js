@@ -5,7 +5,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import './style/common.less'
 import { Router } from 'react-router-dom'
-import {createBrowserHistory} from 'history'
+import { createBrowserHistory } from 'history'
 import ERouter from './router'
 import menuConfig from './config/menuConfig'
 
