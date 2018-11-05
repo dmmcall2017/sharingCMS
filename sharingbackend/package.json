@@ -1,0 +1,12 @@
+{
+  "name": "sharingbackend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "dmm@2018",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.6.1",
+    "koa-router": "^7.4.0",
+    "mysql": "^2.16.0"
+  }
+}
