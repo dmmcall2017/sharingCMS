@@ -5,56 +5,32 @@
     <script src="http://fb.me/JSXTransformer-0.10.0.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
 </head>
+<style>
+    html,body{
+        height:100%;
+    }
+    #main{
+        width:100%;
+        height:100%;
+    }
+    #example{
+        width:100%;
+        height:100px;
+        background: #ff0;
+    }
+    #second{
+        width:100%;
+        height:100%;
+        background: #0f0;
+    }
+</style>
 <body>
-<div id="example"></div>
-
-<div id="second"></div>
+    <div id="main">
+        <div id="example"></div>
+        <div id="second"></div>
+    </div>
 <script>
-    /** @jsx React.DOM */
-
-
-    var Bit = React.createClass({
-        investigate : function(){
-//            debugger;
-        },
-        componentDidMount : function(){
-            // console.log(this.props.children);
-        },
-        render : function(){
-
-            return (
-                <div onClick={this.investigate}>
-                    <div>one</div>
-                    <div>two</div>
-                </div>
-            )
-        }
-    });
-
-    var App = React.createClass({
-
-        componentDidMount : function(){
-            console.log(this);
-        },
-        render : function(){
-            var x = this.props.children;
-            return (
-                <div>
-                    <h5>Hello,App</h5>
-                    {this.props.children}
-                </div>
-            )
-        }
-    });
-
-
-
-    React.renderComponent(
-        <App>
-            <Bit/>
-        </App>,
-        document.getElementById('example')
-    );
+   
 
 </script>
 </body>
