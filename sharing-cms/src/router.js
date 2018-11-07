@@ -19,6 +19,7 @@ import Gallery from './pages/UI/Gallery'
 import Carousel from './pages/UI/Carousel'
 import Tabs from './pages/UI/Tabs'
 import Notification from './pages/UI/Notification'
+import Message from './pages/UI/Messages'
 import User from './pages/User'
 import Button from './pages/UI/Button'
 import Bar from './pages/Echarts/Bar'
@@ -103,6 +104,11 @@ class ERouter extends React.Component{
                     path:"/ui/carousel",
                     key:"/ui/carousel",
                     component: Carousel
+                },
+                {
+                    path:"/ui/messages",
+                    key:"/ui/messages",
+                    component: Message
                 },
                 {
                     path:"/city",
