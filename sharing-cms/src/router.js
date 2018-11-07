@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import  './config/constant'
 import City from './pages/City'
 import Home from './pages/Home'
+import BasicForm from './pages/Form/BasicForm'
 import Login from './pages/Form/Login'
 import Reg from './pages/Form/Reg'
 import Map from './pages/Map'
@@ -51,6 +52,11 @@ class ERouter extends React.Component{
                     path:"/form",
                     key:"/form",
                     children:[
+                        {
+                            path:"/form/basicform",
+                            key:"/form/basicform",
+                            component: BasicForm
+                        },
                         {
                             path:"/form/login",
                             key:"/form/login",

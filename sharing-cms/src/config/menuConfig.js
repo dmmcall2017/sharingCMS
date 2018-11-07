@@ -49,6 +49,10 @@ const menuList = [
         icon:'file-text',
         children:[
             {
+                title:'基础表单',
+                key:'/form/basicform'
+            },
+            {
                 title:'登录',
                 key:'/form/login'
             },

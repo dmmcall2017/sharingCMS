@@ -69,7 +69,7 @@ class Admin extends React.Component {
                     </Sider>
                     <Layout className="main">
                         <Header menuControl={this.menuTrigger} currentStatus={this.state.isCollapsed} ref="header"/>
-                        <Content>
+                        <Content className="context">
                             <ERouter test={this.test}/>
                         </Content>
                         <Footer/>
