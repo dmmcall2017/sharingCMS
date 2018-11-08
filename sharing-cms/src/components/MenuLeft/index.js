@@ -18,7 +18,8 @@ class NavLeft extends React.Component {
             openKeys: ['/home'],
             hideLogoText: false,
             current:[''],
-            oldOpenKeys:''
+            oldOpenKeys:[''],
+            selectedKeys:''
         };
     }
 
@@ -63,11 +64,15 @@ class NavLeft extends React.Component {
         this.setState({
             menuTreeNode: menuTreeNode
         })
+        
     };
 
     //获取当前菜单项title
-    setCurrentTitle = (title)=>{
+    setCurrentTitle = (title,key)=>{
         this.props.updateMenuItemTitle(title);
+        this.setState({
+            selectedKeys:key
+        })
     };
     //菜单渲染
     renderMenu(data){
@@ -90,6 +95,11 @@ class NavLeft extends React.Component {
     testSelect =(path)=>{
         global.constants.history.push(path.key);
     };
+    pushNextKey =(key)=>{
+        this.setState({
+            selectedKeys:key
+        })
+    }
     
     render() {
         return (
@@ -106,6 +116,7 @@ class NavLeft extends React.Component {
                     onOpenChange = {this.onOpenChange}
                     defaultSelectedKeys={this.state.current}
                     onSelect={this.testSelect}
+                    selectedKeys={[this.state.selectedKeys]}
                 >
                     {this.state.menuTreeNode}
                 </Menu>

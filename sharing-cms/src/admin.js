@@ -41,6 +41,7 @@ class Admin extends React.Component {
                 for(let j=0;j<child.length;j++){
                     if(child[j].key===pathname){
                         _this.refs.header.updateCurrentTitle(child[j].title);
+                        _this.refs.hideLogoText.pushNextKey(child[j].key);
                         return;
                     }
                 }
@@ -48,6 +49,7 @@ class Admin extends React.Component {
                 let item = menuConfig[i];
                 if(item.key===pathname){
                     _this.refs.header.updateCurrentTitle(item.title);
+                    _this.refs.hideLogoText.pushNextKey(item.key);
                     return;
                 }
             }
